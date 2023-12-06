@@ -33,4 +33,6 @@ object DestinasiEntry: DestinasiNavigasi {
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun EntrySiswaScreen(){}
+fun EntrySiswaScreen(
+    navigateBack: () -> Unit,
+){}
