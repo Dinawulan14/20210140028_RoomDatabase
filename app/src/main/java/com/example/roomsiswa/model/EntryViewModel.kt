@@ -3,17 +3,15 @@ package com.example.roomsiswa.model
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
 import com.example.roomsiswa.data.Siswa
 import com.example.rootsiswa.repositori.RepositoriSiswa
 
-class EntryViewModel(private val repositoriSiswa: RepositoriSiswa){
+class EntryViewModel(private val repositoriSiswa: RepositoriSiswa) : ViewModel(){
 
-    /**
-     * Berisi status Siswa saat ini
-     */
     var uiStateSiswa by mutableStateOf(UIStateSiswa())
         private set
-    /*Fungsi untuk memvalidasi input */
+
     private fun validasiInput(uiState: DetailSiswa = uiStateSiswa.detailSiswa): Boolean{
         return with(uiState){
             nama.isNotBlank() && alamat.isNotBlank() && telepon.isNotBlank()
@@ -43,7 +41,7 @@ data class DetailSiswa(
     val alamat: String = "",
     val telepon: String= ""
 )
-/* Fungsi untuk mengkonversi data input ke data dalam tabel sesuai jenis datanya */
+
 fun DetailSiswa.toSiswa(): Siswa = Siswa(
     id = id,
     nama = nama,
@@ -62,4 +60,3 @@ fun Siswa.toDetailSiswa(): DetailSiswa = DetailSiswa(
     alamat = alamat,
     telepon = telepon
 )
-

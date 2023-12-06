@@ -1,7 +1,8 @@
 package com.example.roomsiswa.repositori
 
 import com.example.roomsiswa.data.Siswa
-import com.example.rootsiswa.data.SiswaDao
+import com.example.roomsiswa.data.SiswaDao
+
 import com.example.rootsiswa.repositori.RepositoriSiswa
 import kotlinx.coroutines.flow.Flow
 
