@@ -35,4 +35,5 @@ object DestinasiEntry: DestinasiNavigasi {
 @Composable
 fun EntrySiswaScreen(
     navigateBack: () -> Unit,
+    modifier: Modifier = Modifier,
 ){}
