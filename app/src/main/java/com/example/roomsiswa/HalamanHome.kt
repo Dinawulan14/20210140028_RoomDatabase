@@ -3,12 +3,15 @@ package com.example.roomsiswa
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Phone
+import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -34,6 +37,8 @@ import com.example.roomsiswa.model.HomeViewModel
 import com.example.roomsiswa.model.PenyediaViewModel
 import com.example.roomsiswa.navigasi.DestinasiNavigasi
 import com.example.roomsiswa.navigasi.SiswaTopAppBar
+import androidx.compose.foundation.lazy.items
+
 
 object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
@@ -103,13 +108,12 @@ fun BodyHome(
         }
     }
 }
-
 @Composable
 fun ListSiswa(
     itemSiswa: List<Siswa>,
     modifier: Modifier=Modifier
     ) {
-        LazyColumn(modifier = Modifier) {
+        LazyColumn(modifier = Modifier){
             items(items = itemSiswa, key = {it.id}){
                     person ->
                 DataSiswa(
@@ -120,7 +124,6 @@ fun ListSiswa(
             }
         }
     }
-}
 
 @Composable
 fun DataSiswa(
